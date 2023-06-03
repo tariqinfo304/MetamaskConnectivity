@@ -9,19 +9,19 @@ Let's go through the code and understand its functionality:
 
 The component imports necessary dependencies, including React, useState, useEffect, and the detectEthereumProvider function from @metamask/detect-provider.
 
-The yourApplicationDNS variable holds the DNS of your website or application. This DNS is used to construct the MetaMask deep link URL.\
+The yourApplicationDNS variable holds the DNS of your website or application. This DNS is used to construct the MetaMask deep link URL.
 
-The openMetamaskApp function is responsible for opening the MetaMask application on mobile devices. It constructs the MetaMask deep link URL using the yourApplicationDNS variable and opens it in a new browser tab using window.open.\
+The openMetamaskApp function is responsible for opening the MetaMask application on mobile devices. It constructs the MetaMask deep link URL using the yourApplicationDNS variable and opens it in a new browser tab using window.open.
 
-Inside the ConnectWallet component, there are two states: walletAddress and isMobile. The walletAddress state stores the connected wallet address, and the isMobile state determines whether the website is being accessed from a mobile device.\
+Inside the ConnectWallet component, there are two states: walletAddress and isMobile. The walletAddress state stores the connected wallet address, and the isMobile state determines whether the website is being accessed from a mobile device.
 
 The first useEffect hook is used to check if the website is being accessed from a mobile device by comparing the window width with a threshold (768 pixels). The isMobile state is updated accordingly.
 
-The second useEffect hook is used to check the connectivity with MetaMask on component mount. It calls the connectMetaMask function.\
+The second useEffect hook is used to check the connectivity with MetaMask on component mount. It calls the connectMetaMask function.
 
-The connectMetaMask function detects the Ethereum provider (MetaMask) using the detectEthereumProvider function. If the provider is available, event listeners are set for "accountsChanged" and "chainChanged" events. It requests access to the user's MetaMask accounts, retrieves the first account's address, and updates the walletAddress state. If the provider is not found, an error message is logged.\
+The connectMetaMask function detects the Ethereum provider (MetaMask) using the detectEthereumProvider function. If the provider is available, event listeners are set for "accountsChanged" and "chainChanged" events. It requests access to the user's MetaMask accounts, retrieves the first account's address, and updates the walletAddress state. If the provider is not found, an error message is logged.
 
-The return statement renders the JSX content of the component. It includes a button that triggers the connection with MetaMask. If the website is being accessed from a mobile device (isMobile is true), clicking the button will call openMetamaskApp to open the MetaMask application. Otherwise, it will call connectMetaMask to establish the connection. The connected wallet address is displayed if available.\
+The return statement renders the JSX content of the component. It includes a button that triggers the connection with MetaMask. If the website is being accessed from a mobile device (isMobile is true), clicking the button will call openMetamaskApp to open the MetaMask application. Otherwise, it will call connectMetaMask to establish the connection. The connected wallet address is displayed if available.
 
 Overall, this component provides functionality to connect with MetaMask, handle mobile device detection, and open the MetaMask application on mobile devices. It allows users to connect their MetaMask wallet and displays the connected wallet address.
 
