@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Tools
+
+1 - React
+2 - @metamask/detect-provider
+
 ## Description
 
 The provided code ( SRC/ConnectWallet.js ) is a React component named ConnectWallet that handles the connection with MetaMask and opens the MetaMask application on mobile devices.\
