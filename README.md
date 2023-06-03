@@ -4,8 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Tools
 
-1 - React
-2 - @metamask/detect-provider
+React,@metamask/detect-provider
 
 ## Description
 
